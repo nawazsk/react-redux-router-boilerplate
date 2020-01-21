@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setTodoListFilter } from '../actions';
+import { NavLink } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -12,15 +13,21 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
 
-const FilterLink = ({active, children, onClick}) => {
+const FilterLink = ({filter, active, children, onClick}) => {
     return (
-        <button
-            onClick ={onClick}
-            disabled={active}
-            style={{marginLeft:'4px'}}
+        <NavLink
+            exact
+            to={filter === 'SHOW_ALL' ? '/': `/${filter}`}
+            activeStyle={{
+                textDecoration: 'none',
+                color: 'black',
+            }}
+            // onClick ={onClick}
+            // disabled={active}
+            // style={{marginLeft:'4px'}}
         >
             {children}
-        </button>
+        </NavLink>
     )
 }
 

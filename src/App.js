@@ -4,11 +4,11 @@ import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import Filters from './components/Filters';
 
-function App() {
+function App({match:{params}}) {
   return (
     <div className="App">
       <AddTodo />
-      <TodoList />
+      <TodoList filter={params.filter || 'SHOW_ALL'} />
       <Filters />
     </div>
   );

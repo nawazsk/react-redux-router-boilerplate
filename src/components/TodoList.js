@@ -19,9 +19,10 @@ const getTodoList = (todos, filter) => {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return ({
-         todos: getTodoList(state.todos, state.todolistFilter) 
+         todos: getTodoList(state.todos, ownProps.filter) 
+        //  todos: getTodoList(state.todos, state.todolistFilter) 
     })
 }
 

@@ -8,8 +8,8 @@ const Filters = () => {
     return (
         <div>
             <span>Show:</span>
-            <FilterLink filter={todolistFilters.SHOW_ALL}>All</FilterLink>
-            <FilterLink filter={todolistFilters.SHOW_ACTIVE}>Active</FilterLink>
+            <FilterLink filter={todolistFilters.SHOW_ALL}>All</FilterLink>&nbsp;
+            <FilterLink filter={todolistFilters.SHOW_ACTIVE}>Active</FilterLink>&nbsp;
             <FilterLink filter={todolistFilters.SHOW_COMPLETED}>Completed</FilterLink>
         </div>
     )
